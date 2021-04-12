@@ -10,7 +10,7 @@
  */
 function getEmailDomain(email) {
   // throw new Error('Not implemented');
-  return email.split('@')[1];
+  return email.split('@')[email.split('@').length - 1];
 }
 
 module.exports = getEmailDomain;

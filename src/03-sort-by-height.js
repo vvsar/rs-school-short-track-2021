@@ -11,10 +11,21 @@
  */
 function sortByHeight(arr) {
   // throw new Error('Not implemented');
-  arr.sort((a, b) => {
-    if (a !== -1 || b !== -1) return a - b;
-  });
-  return arr;
+  const ar = arr.slice();
+  for (let i = 0; i < ar.length - 1; i++) {
+    if (ar[i] !== -1) {
+      for (let j = i; j < ar.length; j++) {
+        if (ar[j + 1] !== -1) {
+          if (ar[i] > ar[j + 1]) {
+            const temp = ar[i];
+            ar[i] = ar[j + 1];
+            ar[j = 1] = temp;
+          }
+        }
+      }
+    }
+  }
+  return ar;
 }
 
 module.exports = sortByHeight;
