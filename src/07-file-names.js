@@ -16,12 +16,12 @@
 function renameFiles(names) {
   // throw new Error('Not implemented');
   const newNames = names.slice();
-  const arr = [1];
-  for (let i = 1; i < newNames.length; i++) {
+  const arr = [];
+  for (let i = 0; i < newNames.length; i++) {
     arr.push(1);
-    for (let j = 0; j < i; j++) {
+    for (let j = i + 1; j < newNames.length; j++) {
       if (newNames[i] === newNames[j]) {
-        newNames[i] = `${newNames[i]}(${arr[i]})`;
+        newNames[j] = `${newNames[j]}(${arr[i]})`;
         arr[i]++;
       }
     }

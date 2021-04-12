@@ -30,8 +30,10 @@ function getDNSStats(domains) {
   function addResultElement() {
     let n = 1;
     for (let j = 0; j < dmns.length - 1; j++) {
-      if (dmns[j][0] === dmns[j + 1][0]) n++;
-      result[`${dmns[j][0]}`] = n;
+      if (dmns[j + 1] !== undefined) {
+        if (dmns[j][0] === dmns[j + 1][0]) n++;
+      }
+      result[`.${dmns[j][0]}`] = n;
     }
   }
   addResultElement();

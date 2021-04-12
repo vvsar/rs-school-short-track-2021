@@ -19,7 +19,7 @@ function deleteDigit(n) {
     arr.push(strArr.join(''));
   }
   arr.sort((a, b) => b - a);
-  return arr[0];
+  return Number(arr[0]);
 }
 
 module.exports = deleteDigit;

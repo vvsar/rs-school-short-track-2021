@@ -20,6 +20,8 @@ function sortByHeight(arr) {
             const temp = ar[i];
             ar[i] = ar[j + 1];
             ar[j = 1] = temp;
+            i--;
+            break;
           }
         }
       }

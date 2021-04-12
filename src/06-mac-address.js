@@ -15,7 +15,8 @@
 function isMAC48Address(n) {
   // throw new Error('Not implemented');
   const str = String(n);
-  return str.match(/^[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}$/);
+  if (str.match(/^[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}-[A-F\d]{2}$/) === null) return false;
+  return true;
 }
 
 module.exports = isMAC48Address;
