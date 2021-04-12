@@ -12,16 +12,31 @@
  */
 
 class Queue {
-  get size() {
-    throw new Error('Not implemented');
+  constructor() {
+    this.size = 0;
+    this.elements = {};
   }
 
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  get size() {
+    // throw new Error('Not implemented');
+    return this.size;
+  }
+
+  enqueue(element) {
+    // throw new Error('Not implemented');
+    ++this.size;
+    this.elements[this.size] = element;
   }
 
   dequeue() {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    if (this.length > 0) {
+      const dataToDelete = this.elements[0];
+      delete this.elements[0];
+      --this.length;
+      return dataToDelete;
+    }
+    return null;
   }
 }
 
